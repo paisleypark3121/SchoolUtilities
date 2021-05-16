@@ -80,11 +80,11 @@ app.post('/test', function(req,res) {
     _cidr3="/16";
   }
     
-  var response="<b> IPs </b><br>";
-  response+="#1 - IP: "+ip1+"."+ip2+"."+ip3+"."+ip4+" "+_cidr1+"<br>";
-  response+="#2 - IP: "+ip2+"."+ip3+"."+ip4+"."+ip1+" "+_cidr2+"<br>";
-  response+="#3 - IP: "+ip3+"."+ip4+"."+ip1+"."+ip2+" "+_cidr3+"<br>";
-  response+="#4 - HOSTS: "+hosts.toString();
+  var response="<b> Compito di "+Name+" "+Surname+"</b><br><br>";
+  response+="<b>#1</b> - IP: "+ip1+"."+ip2+"."+ip3+"."+ip4+" "+_cidr1+"<br>";
+  response+="<b>#2</b> - IP: "+ip2+"."+ip3+"."+ip4+"."+ip1+" "+_cidr2+"<br>";
+  response+="<b>#3</b> - IP: "+ip3+"."+ip4+"."+ip1+"."+ip2+" "+_cidr3+"<br>";
+  response+="<b>#4</b> - HOSTS: "+hosts.toString();
 
   res.send(response);
   
