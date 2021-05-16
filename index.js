@@ -56,7 +56,11 @@ app.post('/test', function(req,res) {
     cidr+=parseInt(ip1[1])
   if (ip1[2])
     cidr+=parseInt(ip1[2])
+  var hosts=cidr % 1000;
+  if (hosts<30)
+    hosts+=100;
   cidr=cidr % 3;
+  
   var _cidr1="/24";
   var _cidr2="/24";
   var _cidr3="/24";
@@ -77,9 +81,10 @@ app.post('/test', function(req,res) {
   }
     
   var response="<b> IPs </b><br>";
-  response+="#1: "+ip1+"."+ip2+"."+ip3+"."+ip4+" "+_cidr1+"<br>";
-  response+="#2: "+ip2+"."+ip3+"."+ip4+"."+ip1+" "+_cidr2+"<br>";
-  response+="#3: "+ip3+"."+ip4+"."+ip1+"."+ip2+" "+_cidr3+"<br>";
+  response+="#1 - IP: "+ip1+"."+ip2+"."+ip3+"."+ip4+" "+_cidr1+"<br>";
+  response+="#2 - IP: "+ip2+"."+ip3+"."+ip4+"."+ip1+" "+_cidr2+"<br>";
+  response+="#3 - IP: "+ip3+"."+ip4+"."+ip1+"."+ip2+" "+_cidr3+"<br>";
+  response+="#4 - HOSTS: "+hosts.toString();
 
   res.send(response);
   
