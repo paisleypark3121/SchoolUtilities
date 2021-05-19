@@ -29,7 +29,9 @@ app.post('/test', function(req,res) {
 
   Name=Name.split(" ").join("");
   Surname=Surname.split(" ").join("");
-  var Full=Surname+Name;
+  var Full=Surname+Name.toLowerCase();
+  Full+=Full;
+  //console.log(Full);
   
   var ip1=(Full.charCodeAt(0)-66).toString();
   ip1+=(Full.charCodeAt(1)-66).toString();
